@@ -56,13 +56,13 @@ public interface StoreDao {
     @Delete
     void deleteOrder(CustomerOrder order);
 
-    @Query("SELECT * FROM `Customer-Orders` WHERE orderID = :orderId")
+    @Query("SELECT * FROM `Customer_Orders` WHERE orderID = :orderId")
     CustomerOrder getOrderById(long orderId);
 
-    @Query("SELECT * FROM `Customer-Orders` WHERE Customer_ID = :customerId")
+    @Query("SELECT * FROM `Customer_Orders` WHERE Customer_ID = :customerId")
     List<CustomerOrder> getOrdersByCustomer(int customerId);
 
-    @Query("SELECT * FROM `Customer-Orders` WHERE Order_Date BETWEEN :startDate AND :endDate")
+    @Query("SELECT * FROM `Customer_Orders` WHERE Order_Date BETWEEN :startDate AND :endDate")
     List<CustomerOrder> getOrdersByDateRange(Date startDate, Date endDate);
 
     // OrderDetail operations

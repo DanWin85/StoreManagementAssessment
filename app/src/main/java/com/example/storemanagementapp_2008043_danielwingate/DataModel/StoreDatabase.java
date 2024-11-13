@@ -5,12 +5,14 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
 @Database(
         entities = {Customer.class, CustomerOrder.class, OrderDetail.class, Product.class},
         version = 1,
         exportSchema = false
 )
+@TypeConverters(DataTypeConverter.class)
 public abstract class StoreDatabase extends RoomDatabase {
 
     private static StoreDatabase instance = null;

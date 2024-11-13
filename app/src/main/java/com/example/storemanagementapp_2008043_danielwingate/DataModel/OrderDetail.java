@@ -3,6 +3,7 @@ package com.example.storemanagementapp_2008043_danielwingate.DataModel;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
 @Entity (tableName = "Order-Details",
 foreignKeys = {
@@ -11,6 +12,7 @@ foreignKeys = {
     }
 )
 public class OrderDetail {
+    @PrimaryKey
     @ColumnInfo(name = "Order_ID", index = true)
     private long orderID;
     @ColumnInfo(name = "Product_ID", index = true )
